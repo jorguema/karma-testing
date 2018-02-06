@@ -49,13 +49,13 @@ module.exports = function(config) {
 
     // reporter 'html'
     htmlReporter: {
-      outputDir: 'test-results', // where to put the reports 
+      outputDir: 'karma', // where to put the reports 
       templatePath: null, // set if you moved jasmine_template.html
       focusOnFailures: true, // reports show failures on start
       namedFiles: false, // name files instead of creating sub-directories
       pageTitle: null, // page title for reports; browser info by default
       urlFriendlyName: false, // simply replaces spaces with _ for files/dirs
-      reportName: 'report-summary', // report summary filename; browser info by default
+      reportName: 'report-test-summary', // report summary filename; browser info by default
       
       
       // experimental
