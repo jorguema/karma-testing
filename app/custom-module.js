@@ -1,3 +1,4 @@
-export function myModule() {
+export function square() {
+    debugger;
     return "works!";
 }

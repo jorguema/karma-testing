@@ -1,114 +1,48 @@
-// Karma configuration
-// Generated on Tue Feb 06 2018 16:20:00 GMT+0100 (Hora estándar romance)
+const path = require('path');
+process.noDeprecation = true
 
 module.exports = function(config) {
   config.set({
-
-    // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
-
-
-    // frameworks to use
-    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
-
-
-    // list of files / patterns to load in the browser
-    files: [
-      './app/main.js',
-      './app/**/*.spec.js'
-    ],
-
-
-    // list of files / patterns to exclude
-    exclude: [
-    ],
-
-
-    // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-      './app/**/*': ['jshint']
-    },
-
-
-    // test results reporter to use
-    // possible values: 'dots', 'progress'
-    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['spec','kjhtml'],
-    
-    // reporter 'spec'
-    specReporter: {
-      maxLogLines: 5,             // limit number of lines logged per test
-      suppressErrorSummary: true, // do not print error summary
-      suppressFailed: false,      // do not print information about failed tests
-      suppressPassed: false,      // do not print information about passed tests
-      suppressSkipped: true,      // do not print information about skipped tests
-      showSpecTiming: false,      // print the time elapsed for each spec
-      failFast: false              // test would finish with error when a first fail occurs. 
-    },
-
-    plugins: [
-      "jasmine-core",
-      "karma-chrome-launcher",
-      "karma-jasmine-html-reporter",
-      "karma-ie-launcher",
-      "karma-jasmine",
-      "karma-jshint",
-      "karma-spec-reporter"
-    ],
-    // web server port
-    port: 9876,
-
-
-    // enable / disable colors in the output (reporters and logs)
-    colors: true,
-
-
-    // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
-
-
-    // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
-
-
-    // start these browsers
-    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome', 'IE'],
-
-
-    // Continuous Integration mode
-    // if true, Karma captures browsers, runs the tests and exits
+    frameworks: ['jasmine'],
+    files: [
+      'node_modules/babel-polyfill/dist/polyfill.js',
+      'test/**/*.js'
+    ],
+    preprocessors: {
+      'app/custom-module.js': ['webpack', 'sourcemap'],
+      'test/**/*.js': ['webpack', 'sourcemap','jshint']      
+    },
+    webpack: {
+      devtool: 'inline-source-map',
+      module: {
+        loaders: [
+          {
+            test: /\.js$/,
+            loader: 'babel-loader',
+            exclude: path.resolve(__dirname, 'node_modules'),
+            query: {
+              plugins: ['transform-decorators-legacy', 'transform-regenerator'],
+              presets: ['es2015', 'stage-1']
+            }
+          },
+          {
+            test: /\.json$/,
+            loader: 'json-loader',
+          },
+        ]
+      }
+    },
+    webpackServer: {
+      noInfo: true
+    },
+    reporters: ['kjhtml'],
+    
+    port: 9876,
+    colors: true,
+    logLevel: config.LOG_INFO,
+    autoWatch: true,
     singleRun: false,
-
-    // Concurrency level
-    // how many browser should be started simultaneous
-    concurrency: Infinity,
-
-    // jshint preprocessor configuration
-    jshint: {
-      options: {
-          jasmine: true,
-          curly: true,
-          eqeqeq: true,
-          immed: true,
-          latedef: true,
-          newcap: true,
-          noarg: true,
-          sub: true,
-          undef: true,
-          boss: true,
-          devel: true,
-          eqnull: true,
-          browser: true,
-          globals: {
-              cordova: true,
-              jQuery: true
-          }
-      },
-      summary: true
-  },
-  })
-}
+  });
+};
