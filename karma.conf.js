@@ -35,7 +35,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['spec','html'],
+    reporters: ['spec','kjhtml'],
     
     // reporter 'spec'
     specReporter: {
@@ -48,26 +48,10 @@ module.exports = function(config) {
       failFast: false              // test would finish with error when a first fail occurs. 
     },
 
-    // reporter 'html'
-    htmlReporter: {
-      outputDir: 'karma', // where to put the reports 
-      templatePath: null, // set if you moved jasmine_template.html
-      focusOnFailures: true, // reports show failures on start
-      namedFiles: false, // name files instead of creating sub-directories
-      pageTitle: null, // page title for reports; browser info by default
-      urlFriendlyName: false, // simply replaces spaces with _ for files/dirs
-      reportName: 'report-test-summary', // report summary filename; browser info by default
-      
-      
-      // experimental
-      preserveDescribeNesting: false, // folded suites stay folded 
-      foldAll: false, // reports start folded (only with preserveDescribeNesting)
-    },
-
     plugins: [
       "jasmine-core",
       "karma-chrome-launcher",
-      "karma-html-reporter",
+      "karma-jasmine-html-reporter",
       "karma-ie-launcher",
       "karma-jasmine",
       "karma-jshint",
