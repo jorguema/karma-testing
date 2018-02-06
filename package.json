@@ -12,11 +12,10 @@
     "jasmine-core": "^2.9.1",
     "karma": "^2.0.0",
     "karma-chrome-launcher": "^2.2.0",
+    "karma-html-reporter": "^0.2.7",
     "karma-ie-launcher": "^1.0.0",
     "karma-jasmine": "^1.1.1",
-    "karma-spec-reporter": "0.0.32"
-  },
-  "dependencies": {
+    "karma-spec-reporter": "0.0.32",
     "karma-jshint": "^0.1.0"
   }
 }
