@@ -27,6 +27,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      './app/**/*': ['jshint']
     },
 
 
@@ -64,6 +65,30 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+
+    // jshint preprocessor configuration
+    jshint: {
+      options: {
+          jasmine: true,
+          curly: true,
+          eqeqeq: true,
+          immed: true,
+          latedef: true,
+          newcap: true,
+          noarg: true,
+          sub: true,
+          undef: true,
+          boss: true,
+          devel: true,
+          eqnull: true,
+          browser: true,
+          globals: {
+              cordova: true,
+              jQuery: true
+          }
+      },
+      summary: true
+  },
   })
 }
