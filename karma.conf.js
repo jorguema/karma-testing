@@ -1,7 +1,7 @@
 const path = require('path');
 process.noDeprecation = true
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
     basePath: '',
     browsers: ['Chrome', 'IE'],
@@ -12,12 +12,18 @@ module.exports = function(config) {
     ],
     preprocessors: {
       'src/**/*.js': ['webpack', 'sourcemap'],
-      'tests/**/*.js': ['webpack', 'sourcemap','jshint']      
+      'tests/**/*.js': ['webpack', 'sourcemap']
     },
     webpack: {
       devtool: 'inline-source-map',
       module: {
-        loaders: [
+        loaders: [          
+          {
+            enforce: "pre",
+            test: /\.spec.js$/,
+            exclude: /node_modules/,
+            loader: "eslint-loader",
+          },
           {
             test: /\.js$/,
             loader: 'babel-loader',
@@ -37,7 +43,7 @@ module.exports = function(config) {
     webpackServer: {
       noInfo: true
     },
-    reporters: ['spec','kjhtml'],
+    reporters: ['spec', 'kjhtml'],
 
     // reporter 'spec'
     specReporter: {
@@ -54,7 +60,6 @@ module.exports = function(config) {
     plugins: [
       "karma-jasmine",
       "karma-webpack",
-      "karma-jshint",
       "karma-jasmine-html-reporter",
       "karma-sourcemap-loader",
       "karma-babel-preprocessor",
@@ -62,7 +67,7 @@ module.exports = function(config) {
       "karma-ie-launcher",
       "karma-spec-reporter"
     ],
-    
+
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

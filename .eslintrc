@@ -1,0 +1,10 @@
+{
+  "extends": "airbnb/base",
+  "rules": {
+    "linebreak-style": 0,
+    "indent": [2, 2, {"SwitchCase": 1}]
+  },
+  "env":{
+    "jasmine": true
+  }
+}
