@@ -24,7 +24,7 @@ module.exports = function(config) {
             exclude: path.resolve(__dirname, 'node_modules'),
             query: {
               plugins: ['transform-decorators-legacy', 'transform-regenerator'],
-              presets: ['es2015', 'stage-1']
+              presets: ['env']
             }
           },
           {
