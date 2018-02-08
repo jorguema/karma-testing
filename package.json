@@ -1,13 +1,23 @@
 {
   "name": "karma",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Token service",
   "main": "index.js",
   "scripts": {
     "test": "karma start"
   },
-  "author": "",
-  "license": "ISC",
+  "bugs": {
+    "url": "http://github.com/$TODO-github-username/$TODO-module-name/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/$TODO-github-username/$TODO-module-name.git"
+  },
+  "keywords": [
+    "auth","token","service"
+  ],
+  "author": "your name <your.contact.email@service.com> TODO",
+  "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
@@ -32,5 +42,8 @@
     "karma-spec-reporter": "0.0.32",
     "karma-webpack": "^2.0.3",
     "webpack": "^2.3.3"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
