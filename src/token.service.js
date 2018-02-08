@@ -4,7 +4,7 @@ import { requestService } from './request.service';
 export class TokenService {
 
     constructor() {
-        this._apiUrl = null;       
+        this._apiUrl = "http://auth.api.desarrollo.corp/Token";       //default
     }
 
     setApiUrl(apiUrl) {
@@ -12,7 +12,8 @@ export class TokenService {
     }
 
     token(username, password, appid) {
-
+        if(!username || !password || !appid) return null;
+        
         let params = {
             'login': username,
             'password': password,
