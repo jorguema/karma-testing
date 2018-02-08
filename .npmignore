@@ -13,5 +13,5 @@ node_modules
 config.gypi
 *.orig
 
-test/
+tests/
 lib/
