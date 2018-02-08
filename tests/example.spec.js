@@ -1,5 +1,4 @@
-import { square } from '../app/custom-module';
-import { TokenService } from '../app/token.service';
+import { TokenService } from '../src/token.service';
 
 
 describe('token login', function() {

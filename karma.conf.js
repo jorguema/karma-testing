@@ -8,11 +8,11 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
     files: [
       'node_modules/babel-polyfill/dist/polyfill.js',
-      'test/**/*.js'
+      'tests/**/*.spec.js'
     ],
     preprocessors: {
-      'app/**/*.js': ['webpack', 'sourcemap'],
-      'test/**/*.js': ['webpack', 'sourcemap','jshint']      
+      'src/**/*.js': ['webpack', 'sourcemap'],
+      'tests/**/*.js': ['webpack', 'sourcemap','jshint']      
     },
     webpack: {
       devtool: 'inline-source-map',
