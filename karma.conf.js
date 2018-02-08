@@ -11,7 +11,7 @@ module.exports = function(config) {
       'test/**/*.js'
     ],
     preprocessors: {
-      'app/custom-module.js': ['webpack', 'sourcemap'],
+      'app/**/*.js': ['webpack', 'sourcemap'],
       'test/**/*.js': ['webpack', 'sourcemap','jshint']      
     },
     webpack: {

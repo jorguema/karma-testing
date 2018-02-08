@@ -1,4 +1,4 @@
 export function square() {
     debugger;
-    return "works!";
+    return 2+2;
 }
