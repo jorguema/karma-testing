@@ -33,6 +33,10 @@ const config = {
     //
     module: {
         rules: [
+            {   
+                test: /\.json$/, 
+                use: 'json-loader' 
+            },
             // ES6 to ES5 transpiling
             {
                 test: /\.js$/, // regexp to match what the loader will be applied to
@@ -48,6 +52,10 @@ const config = {
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV), // read the value provided by package.json 'build' script and store it to use it inside our app or by vendor libraries
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            include: /\.min\.js$/,
+            minimize: true
         }),
     ],
 
