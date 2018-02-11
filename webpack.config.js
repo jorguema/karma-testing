@@ -11,13 +11,15 @@ const webpack = require('webpack');
 // const isTest = ENV === 'test';
 
 const packageName = "TokenService";
-const distFileName = "token.service.js";
+const distFileName = "[name].js";
 
 // Webpack configuration
 const config = {
 
     entry: {
-        index: './src/index.js', // output file will be 'bundle.js' and our starting point is 'app.js'
+        // index: './src/index.js', // output file will be 'bundle.js' and our starting point is 'app.js'
+        "token.service": "./src/index.js",
+        "token.service.min": "./src/index.js",
     },
 
     output: {
@@ -50,12 +52,12 @@ const config = {
     // Plugins: post-process bundled file
     //
     plugins: [
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV), // read the value provided by package.json 'build' script and store it to use it inside our app or by vendor libraries
-        }),
         new webpack.optimize.UglifyJsPlugin({
             include: /\.min\.js$/,
             minimize: true
+        }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV), // read the value provided by package.json 'build' script and store it to use it inside our app or by vendor libraries
         }),
     ],
 

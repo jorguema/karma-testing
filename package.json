@@ -6,7 +6,7 @@
   "scripts": {
     "test": "karma start",
     "clean": "rimraf dist",
-    "build": "cross-env NODE_ENV=production npm run clean && webpack -p",
+    "build": "cross-env NODE_ENV=production npm run clean && webpack",
     "serve": "webpack-dev-server --open",
     "start": "npm run serve"
   },
