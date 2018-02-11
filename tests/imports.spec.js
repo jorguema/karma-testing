@@ -9,7 +9,7 @@ describe('Import modules', function() {
   });
 
   it('TokenService should be imported', function() { 
-    var tokenService = new TokenService();
+    var tokenService = new TokenService(); 
 
     expect(tokenService).not.toBeNull();
   });
