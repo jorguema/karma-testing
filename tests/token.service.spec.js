@@ -2,13 +2,13 @@ import { TokenService } from '../src/token.service';
 
 
 describe('Token service', function() {
-  it('Default Auth endpoint', async function() {    
+  it('Default Auth endpoint', function() {    
     let tokenService = new TokenService();
 
     expect(tokenService._apiUrl).not.toBeNull();
   });
 
-  it('Change Auth endpoint', async function() {
+  it('Change Auth endpoint', function() {
     let tokenService = new TokenService();
     var apiTokenUrl = 'http://auth.api.corp/Token';    
     tokenService.setApiUrl(apiTokenUrl);
@@ -16,7 +16,7 @@ describe('Token service', function() {
     expect(tokenService._apiUrl).toEqual(apiTokenUrl);
   });
 
-  it('Needs credentials', async function() {    
+  it('Needs credentials', function() {    
     let data = {
         username: "",
         password: "",
