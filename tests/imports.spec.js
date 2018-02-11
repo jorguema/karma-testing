@@ -1,5 +1,5 @@
 import { RequestService } from '../src/request.service';
-import { TokenService } from '../src/token.service';
+import { TokenService } from '../dist/token.service'; 
 
 describe('Import modules', function() {
   it('RequestService should be imported', function() {  

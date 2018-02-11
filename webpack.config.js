@@ -10,24 +10,23 @@ const webpack = require('webpack');
 // const isServe = ENV === 'serve';
 // const isTest = ENV === 'test';
 
-const packageName = "TokenService";
+//  const packageName = "TokenService"; //use only to export a default service
 const distFileName = "[name].js";
 
 // Webpack configuration
 const config = {
 
     entry: {
-        // index: './src/index.js', // output file will be 'bundle.js' and our starting point is 'app.js'
         "token.service": "./src/index.js",
-        "token.service.min": "./src/index.js",
+        "token.service.min": "./src/index.js"
     },
 
     output: {
-        path: path.resolve(__dirname, 'dist'), // also works: path.join(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist'),
         filename: distFileName,
-        library: packageName,
-        libraryTarget: 'umd',
-        umdNamedDefine: true,
+        libraryTarget: 'umd',        
+        // library: packageName, //use only to export a default service
+        // umdNamedDefine: true, //use only to export a default service
     },
 
     //

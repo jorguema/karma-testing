@@ -1,5 +1,14 @@
 
 import { TokenService } from './token.service';
+import { RequestService } from './request.service';
 
-module.exports = TokenService; 
 
+export{
+    TokenService
+}
+
+// export both allow to use them
+// export{
+//     TokenService,
+//     RequestService
+// }
