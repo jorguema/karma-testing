@@ -14,13 +14,13 @@ const webpack = require('webpack');
 const config = {
 
   entry: {
-    index: './src/token.service.js', // output file will be 'bundle.js' and our starting point is 'app.js'
+    index: './src/index.js', // output file will be 'bundle.js' and our starting point is 'app.js'
   },
 
   output: {
     path: path.resolve(__dirname, 'dist'), // also works: path.join(__dirname, 'dist'),
-    filename: 'token.service.js',
-    library: 'Repos',
+    filename: 'index.js',
+    library: 'TokenService',
     libraryTarget: 'umd',
     umdNamedDefine: true,
   },

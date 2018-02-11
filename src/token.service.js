@@ -1,8 +1,8 @@
 
 import { requestService } from './request.service';
 
-export class TokenService {
-
+export class TokenService { 
+    
     constructor() {
         this._apiUrl = "http://auth.api.desarrollo.corp/Token";       //default
     }
