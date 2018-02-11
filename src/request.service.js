@@ -12,7 +12,7 @@ export class RequestService {
     }
 
     setBearerToken(token) {
-        this._bearerToken = token;
+        this._bearerToken = token; 
     }
 
     get(url) {

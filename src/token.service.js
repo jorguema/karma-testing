@@ -11,11 +11,11 @@ export class TokenService {
         this._apiUrl = apiUrl;
     }
 
-    token(username, password, appid) {
-        if(!username || !password || !appid) return null;
+    token(username, password, appid) { 
+        if(!username || !password || !appid) return null; 
         
-        let params = {
-            'login': username,
+        let params = { 
+            'login': username, 
             'password': password,
             'appID': appid
         };

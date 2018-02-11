@@ -7,7 +7,8 @@
     "test": "karma start",
     "clean": "rimraf dist",
     "build": "cross-env NODE_ENV=production npm run clean && webpack -p",
-    "serve": "webpack-dev-server --open"
+    "serve": "webpack-dev-server --open",
+    "start": "npm run serve"
   },
   "bugs": {
     "url": "http://github.com/$TODO-github-username/$TODO-module-name/issues"
