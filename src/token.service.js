@@ -4,7 +4,7 @@ import { requestService } from './request.service';
 export class TokenService { 
     
     constructor() {
-        this._apiUrl = "http://auth.api.desarrollo.corp/Token";       //default
+        this._apiUrl = "http://xxx.desarrollo.corp/Token";       //default
     }
 
     setApiUrl(apiUrl) {

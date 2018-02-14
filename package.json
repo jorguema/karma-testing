@@ -1,6 +1,6 @@
 {
-  "name": "karma",
-  "version": "0.0.1",
+  "name": "@jorguema/token-service-module",
+  "version": "0.0.4",
   "description": "Token service",
   "main": "index.js",
   "scripts": {
@@ -8,15 +8,17 @@
     "clean": "rimraf dist",
     "build": "cross-env NODE_ENV=production npm run clean && webpack",
     "serve": "webpack-dev-server --open",
+    "npm-publish": "npm publish --access=public",
+    "npm-version" : "npm version",
     "start": "npm run serve"
   },
   "bugs": {
-    "url": "http://github.com/$TODO-github-username/$TODO-module-name/issues"
+    "url": "https://github.com/jorguema"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/$TODO-github-username/$TODO-module-name.git"
-  },
+    "url": "https://github.com/jorguema"
+  }, 
   "keywords": [
     "auth",
     "token",

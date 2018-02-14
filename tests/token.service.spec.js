@@ -32,7 +32,7 @@ describe('Token service', function() {
   // it('Needs to get token', async function() {
   //   let data = {
   //       username: "jguerola",
-  //       password: "jguerola",
+  //       password: "xxx",
   //       appid: "3"
   //   }
     
