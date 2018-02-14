@@ -1,6 +1,6 @@
 {
   "name": "@jorguema/token-service-module",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Token service",
   "main": "index.js",
   "scripts": {
