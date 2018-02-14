@@ -1,6 +1,6 @@
 {
   "name": "@jorguema/token-service-module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Token service",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "build": "cross-env NODE_ENV=production npm run clean && webpack",
     "serve": "webpack-dev-server --open",
     "npm-publish": "npm publish --access=public",
-    "npm-version" : "npm version",
+    "npm-version": "npm version",
     "start": "npm run serve"
   },
   "bugs": {
@@ -18,7 +18,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/jorguema"
-  }, 
+  },
   "keywords": [
     "auth",
     "token",
