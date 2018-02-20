@@ -1,5 +1,5 @@
 {
-  "name": "@jorguema/token-service-module",
+  "name": "@grm-test-feed/testintegration",
   "version": "0.0.7",
   "description": "Token service",
   "main": "index.js",
