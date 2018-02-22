@@ -1,16 +1,12 @@
-import { RequestService } from '../src/request.service';
-import { TokenService } from '../dist/token.service'; 
+ import { RequestService } from '../src/request.service';
+ import { TokenService } from '../src/token.service.js';
 
-describe('Import modules', function() {
-  it('RequestService should be imported', function() {  
-    var requestService = new RequestService();
-    
-    expect(requestService).not.toBeNull();
+describe('Import modules', function () {
+  it('RequestService should be imported', function() {
+    expect(RequestService).not.toBeNull();
   });
 
-  it('TokenService should be imported', function() { 
-    var tokenService = new TokenService(); 
-
-    expect(tokenService).not.toBeNull();
+  it('TokenService should be imported', function () {
+    expect(TokenService).not.toBeNull();
   });
 });

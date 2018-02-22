@@ -1,50 +1,28 @@
+import { RequestService } from './request.service';
+import { ErrorService } from './error.service'
 
-import { requestService } from './request.service';
+class tokenService {
 
-export class TokenService { 
-    
     constructor() {
-        this._apiUrl = "http://xxx.desarrollo.corp/Token";       //default
+        this._apiUrl = null;
     }
 
     setApiUrl(apiUrl) {
         this._apiUrl = apiUrl;
     }
 
-    token(username, password, appid) { 
-        if(!username || !password || !appid) return null; 
-        
-        let params = { 
-            'login': username, 
+    getToken(username, password, appid) {
+        if (!this._apiUrl) new ErrorService().throwError("Api url required");
+        if (!username || !password || !appid) new ErrorService().throwError("Username, Password and Appid required");        
+
+        let bodyParams = {
+            'login': username,
             'password': password,
             'appID': appid
         };
 
-        /*
-        var options = {
-            method: 'POST',
-            uri: this._apiUrl,
-            form: params,
-            json: true
-        };
-        
-        return request(options)
-            .then(function (token) {
-                return token;
-            })
-            .catch(function (err) {
-                return err;
-            });*/
-
-        requestService.setApiUrl(this._apiUrl);
-        return requestService.post('', params).then((token) => {
-            requestService.setBearerToken(token);
-            return token;
-        });   
-
+        return RequestService.post(this._apiUrl, bodyParams);
     }
-
 }
 
-export let tokenService = new TokenService();
-
+export let TokenService = new tokenService();

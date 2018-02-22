@@ -1,14 +1,9 @@
 
 import { TokenService } from './token.service';
 import { RequestService } from './request.service';
+import { ErrorService } from './error.service';
 
 
-export{
-    TokenService
+export {
+    RequestService
 }
-
-// export both allow to use them
-// export{
-//     TokenService,
-//     RequestService
-// }
